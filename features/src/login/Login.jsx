@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+import '/Users/sainathreddy/Desktop/AOM/features/src/login/style.css'
 const Login = () => {
     const handlelogin = () => {
         fetch("http://localhost:3001/login")
@@ -9,9 +9,9 @@ const Login = () => {
     return (
         <form onSubmit={handlelogin}>
         <div className="login-form">
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
-            <button type="submit">LOG IN</button>     
+            <input type="text" placeholder="Username" class="input-field"/>
+            <input type="password" placeholder="Password" class="input-field"/>
+            <button type="submit" class="login-button">LOG IN</button>     
         </div>
         </form>
     )

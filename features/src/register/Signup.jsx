@@ -12,6 +12,15 @@ function Signup() {
     const [city, setCity] = useState("");
     const [zip, setZip] = useState("");
     const [phone, setPhone] = useState("");
+    const [state, setState] = useState('');
+
+    const states = [
+        "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia",
+        "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+        "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
+        "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+        "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+    ];
 
     const handleformdata = async (e) => {
         e.preventDefault();
@@ -75,6 +84,12 @@ function Signup() {
             <input type="text" placeholder="Company Name" onChange={(e) => setCompanyName(e.target.value)}></input>
             <input type="text" placeholder="Address" onChange={(e) => setAddress(e.target.value)}></input>
             <input type="text" placeholder="city" onChange={(e) => setCity(e.target.value)}></input>
+            <select onChange={(e) => setState(e.target.value)} value={state}>
+                <option value="" disabled>Select a state...</option>
+                {states.map((state, index) => (
+                    <option key={index} value={state}>{state}</option>
+                ))}
+            </select>
             <input type="text" placeholder="Zipcode" onChange={(e) => setZip(e.target.value)}></input>
             <input type="text" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}></input>
             <button type="submit">Create Account</button>
